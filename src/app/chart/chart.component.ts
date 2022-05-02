@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, Input, ViewChild} from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -6,24 +6,13 @@ import { Chart } from 'chart.js';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit {
-  constructor() { 
-    // $.ajax({
-    //   url: 'https://randomuser.me/api/?results=1000',
-    //   dataType: 'json',
-    //   success: function(data) {
-    //     console.log(data);
-    //   }
-    // });
-        }
-
-  ngOnInit(): void {}
-
+export class ChartComponent {
   canvas: any;
   ctx: any;
-  @ViewChild('mychart') mychart:any;
 
-  
+  @ViewChild('mychart') mychart:any;
+  @Input() users: any;
+
   ngAfterViewInit() {
     this.canvas = this.mychart.nativeElement; 
     this.ctx = this.canvas.getContext('2d');
@@ -49,5 +38,4 @@ export class ChartComponent implements OnInit {
       },
   });
   }
-
 }

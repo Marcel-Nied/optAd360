@@ -1,16 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-
-export interface tableOfTheOldestMans {
+export interface TableOfTheOldestMen {
   firstName: string;
   lastName: string;
   age: number;
 }
-const ELEMENT_DATA: tableOfTheOldestMans[] = [
+
+const ELEMENT_DATA: TableOfTheOldestMen[] = [
   {firstName: 'Adam', lastName: 'Nowak', age: 92},
   {firstName: 'Jan', lastName: 'Kowalski', age: 90},
   {firstName: 'Fluorine', lastName: 'Noskowska', age: 99},
-  { firstName: 'Neon', lastName: 'Kokot', age: 89},
+  {firstName: 'Neon', lastName: 'Kokot', age: 89},
 ];
 
 @Component({
@@ -18,14 +18,8 @@ const ELEMENT_DATA: tableOfTheOldestMans[] = [
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent{
   displayedColumns: string[] = ['firstName', 'lastName', 'age', ];
-  dataSource = ELEMENT_DATA;
-  
-  
-  constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  @Input() users: any;
 }
