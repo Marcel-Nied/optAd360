@@ -10,8 +10,9 @@ export class ChartComponent {
   canvas: any;
   ctx: any;
 
-  @ViewChild('mychart') mychart:any;
+  @ViewChild('mychart') mychart: any;
   @Input() users: any;
+  @Input() usersGroupedByAge: any;
 
   ngAfterViewInit() {
     this.canvas = this.mychart.nativeElement; 
@@ -20,21 +21,24 @@ export class ChartComponent {
     new Chart(this.ctx, {
       type: 'bar',
       data: {
-          datasets: [{
-              label: 'Current Vallue',
-              data: [0, 20, 40, 50],
-              backgroundColor: "rgb(115 185 243 / 65%)",
-              borderColor: "#007ee7",
-              fill: true,
-          },
+          datasets: [
           {
-            label: 'Invested Amount',
-            data: [0, 20, 40, 60, 80],
+            label: 'Number of men in the given age groups from 1000 random results',
+            data: [
+              this.usersGroupedByAge['20-29'],
+              this.usersGroupedByAge['30-39'],
+              this.usersGroupedByAge['40-49'],
+              this.usersGroupedByAge['50-59'],
+              this.usersGroupedByAge['60-69'],
+              this.usersGroupedByAge['70-79'],
+              this.usersGroupedByAge['80-89'],
+              this.usersGroupedByAge['90-99'],
+            ],
             backgroundColor: "#47a0e8",
             borderColor: "#007ee7",
             fill: true,
         }],
-          labels: ['January 2019', 'February 2019', 'March 2019', 'April 2019']
+          labels: ['20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90-99']
       },
   });
   }

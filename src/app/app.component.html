@@ -1,32 +1,40 @@
 <div class="wrapper">
   <div>
     <span>
-      jakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakis
-      jakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakis
-      tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekst
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu elit vestibulum, interdum turpis vel, finibus libero. In suscipit ultricies molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium velit lectus, ut rhoncus tortor ultricies eu. Morbi iaculis, augue et vehicula pretium, sapien tortor iaculis neque, sed vulputate arcu mi vitae mauris. Sed ligula lectus, consectetur ut gravida in, consectetur sed risus. Maecenas ultrices suscipit tortor, id finibus velit pharetra non. Pellentesque vel quam eu lectus rhoncus eleifend id vitae sem. Sed at feugiat sapien. Suspendisse potenti. Proin commodo ipsum sit amet euismod fringilla.
     </span>
   </div>
   <div>
     <span>
-      jakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakisjakis tekstjakisjakis
+      Aenean eget blandit risus. Donec vitae fringilla purus. Mauris iaculis nunc eget augue egestas, non lacinia tortor facilisis. Ut sed eros vel felis scelerisque blandit non quis lacus. Morbi tristique vitae mauris a commodo. Integer a mollis risus, eget porta felis. Suspendisse scelerisque tellus mi, vel fringilla ante sodales ut. Nunc tempus faucibus sem eget egestas. Aenean eu odio felis. Nulla est ante, hendrerit ac magna sed, consequat sodales libero. Aenean erat ex, ornare nec tortor nec, suscipit ornare dui. Suspendisse luctus dolor nulla. Vivamus vulputate dapibus metus, non venenatis urna aliquet vel. Donec id dapibus dolor. Vivamus a justo in tellus aliquet egestas vitae vitae mauris. Mauris euismod nisi augue, consectetur tempus nunc dignissim at.
     </span>
   </div>
   <div class="main-window">
     <div class="heading">
       Placeholder
     </div>
-    <app-chart [users]="users"></app-chart>
-    <app-table [users]="users"></app-table>
+    <div >
+      <app-chart *ngIf="showTable" [users]="users" [usersGroupedByAge]="usersGroupedByAge"></app-chart>
+      <app-table *ngIf="showTable" [users]="users"></app-table>
+      <button (click)="loadData()" (click)="loadTable()" >Show Table and Chart
+      </button>
+      <mat-spinner *ngIf="!showSpinner"></mat-spinner>
+
+    </div>
   </div>
-  <button>jakiś button</button>
   <div>
     <span>
-      dvdmfdfmdfmfmdvekstjakisjakisjakis tekstjakisjakisvvjakis tekstjakisjakis
+      Suspendisse pretium diam quis posuere convallis. Donec rutrum, ipsum aliquam gravida pulvinar, sem ante molestie ligula, eu bibendum est nulla id justo. Donec id turpis molestie, pellentesque nunc dignissim, fermentum ante. Pellentesque rutrum, neque sed efficitur convallis, diam sem bibendum libero, eget convallis massa nulla eget elit. Nam pretium felis eget ex fermentum pretium. Praesent a nisl nec eros varius imperdiet eget in nisi. Quisque turpis turpis, elementum vel erat quis, cursus pretium nulla. Curabitur finibus dui luctus tempus volutpat. Etiam egestas vitae augue consectetur laoreet. Fusce fermentum accumsan tellus, vel aliquet justo semper in. Phasellus quis ante non orci commodo rutrum sed vel urna.
     </span>
   </div>
   <div>
     <span>
-    jakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekstjakis tekst
+      Aenean consectetur, nunc eu finibus blandit, mauris orci euismod purus, eu porta ipsum massa non ligula. Mauris elit nulla, dapibus vitae mollis non, facilisis vestibulum magna. Aliquam convallis ligula purus, id aliquet mi elementum at. Praesent iaculis ante et tortor placerat, et scelerisque orci convallis. Donec mattis quis ipsum non semper. Praesent mattis ut massa in viverra. Ut finibus pellentesque aliquet. Aliquam et risus consectetur, dignissim nulla vel, tincidunt libero. Mauris vitae convallis arcu. Pellentesque dapibus est vitae congue vehicula. Vivamus sit amet leo eu tortor dignissim cursus. Sed rutrum eros ut nisl dictum consectetur. Cras turpis enim, auctor vitae sem vel, pretium rutrum diam.
+    </span>
+  </div>
+  <div>
+    <span>
+      Sed a risus ut leo semper sodales. Duis fermentum lacus felis, eget convallis leo rutrum vitae. Nunc ultricies elit turpis, a consectetur elit suscipit eu. Suspendisse sit amet mi sit amet purus dignissim placerat et eu nisi. Morbi pellentesque dui sit amet nisi consectetur lacinia. Integer ultricies porttitor massa, ac varius erat fringilla condimentum. Mauris eget leo blandit, malesuada leo ac, convallis sem. Proin porta porta porttitor. Nulla facilisi. Donec euismod ullamcorper faucibus. In varius purus nec ornare molestie.
     </span>
   </div>
 </div>
